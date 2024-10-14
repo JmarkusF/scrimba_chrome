@@ -1,20 +1,22 @@
 const ulEl = document.getElementById("ul-el")
-let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
+let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    console.log(myLeads)
+    inputEl.value = ""
     renderLeads()
-    // 2. Call the renderLeads() function
+    
 })
 
-// 1. Wrap the code below in a renderLeads() function
+
 function renderLeads() {
 let listItems = ""
 for ( let i = 0; i < myLeads.length; i++) {
-    listItems += "<li>" + myLeads[i] + "</li>"
+    // Wrap the lead in an anchor tag (<a>) inside the <li>
+        // Can you make the link open in a new tab?
+        listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
 }
 
 
