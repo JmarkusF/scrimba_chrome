@@ -14,9 +14,13 @@ inputBtn.addEventListener("click", function() {
 function renderLeads() {
 let listItems = ""
 for ( let i = 0; i < myLeads.length; i++) {
-    // Wrap the lead in an anchor tag (<a>) inside the <li>
-        // Can you make the link open in a new tab?
-        listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+    // Refactor the code below to use a template string
+        listItems += ` 
+        <li>
+            <a target='_blank' href='${myLeads[i]}'>${myLeads[i]}
+            </a>
+        </li>
+        `
 }
 
 
